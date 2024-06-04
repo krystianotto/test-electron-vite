@@ -10,7 +10,9 @@ export default defineConfig(() => {
   return {
     main: {
       plugins: [
-        externalizeDepsPlugin(),
+        externalizeDepsPlugin({
+          include: ['test-module'],
+        }),
       ],
       build: {
         outDir: 'dist/main',
